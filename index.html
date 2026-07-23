@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galih — Portfolio</title>
+
+<meta name="description" content="Portofolio Galih, pelajar SMK KESUMA BANGSA 2 Depok yang aktif mempelajari Adobe After Effects, Adobe Illustrator, serta mengembangkan berbagai proyek berbasis Arduino dan ESP8266.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="particleCanvas"></canvas>
+<div class="grain"></div>
+<div class="progress-bar" id="progressBar"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<button class="scroll-top" id="scrollTop" aria-label="Kembali ke atas">↑</button>
+
+<!-- ============ NAVIGASI ============ -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#top" class="nav__seal" aria-label="Kembali ke atas">RY</a>
+    <nav class="nav__links">
+      <a href="#tentang">About</a>
+      <a href="#keahlian">Skills</a>
+      <a href="#proyek-featured">Projects</a>
+      <a href="#proyek">Experience</a>
+      <a href="#pengalaman">Education</a>
+      <a href="#kontak">Contact</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO — "SAMPUL LAPORAN" ============ -->
+<section class="hero" id="top">
+  <!-- Gaming 3D scene: full-width behind hero -->
+  <canvas id="gamingCanvas" aria-hidden="true"></canvas>
+
+  <!-- Floating gaming icons (CSS animated) -->
+  <div class="gaming-icons" aria-hidden="true">
+    <!-- PlayStation symbols -->
+    <span class="gicon gicon--circle"  style="--ix:82%;--iy:18%;--id:0s;   --is:1.1">○</span>
+    <span class="gicon gicon--cross"   style="--ix:88%;--iy:55%;--id:1.2s; --is:0.85">✕</span>
+    <span class="gicon gicon--square"  style="--ix:75%;--iy:72%;--id:2.4s; --is:0.9">□</span>
+    <span class="gicon gicon--tri"     style="--ix:91%;--iy:38%;--id:0.7s; --is:1.0">△</span>
+    <!-- Extra decoratives -->
+    <span class="gicon gicon--ctrl"    style="--ix:70%;--iy:12%;--id:1.8s; --is:0.7">⬡</span>
+    <span class="gicon gicon--star"    style="--ix:93%;--iy:80%;--id:3.1s; --is:0.65">✦</span>
+    <span class="gicon gicon--diamond" style="--ix:65%;--iy:88%;--id:0.4s; --is:0.75">◈</span>
+    <span class="gicon gicon--circle"  style="--ix:60%;--iy:30%;--id:2.9s; --is:0.5">○</span>
+  </div>
+
+  <div class="hero__inner">
+  <div class="hero__badge">● Terbuka untuk Belajar & Berkarya</div>
+
+  <p class="eyebrow">Desain Grafis · Editor · Arduino Enthusiast</p>
+
+  <h1 class="hero__name">
+    Galih Putra Sandi
+  </h1>
+
+  <p class="hero__role">
+    Pelajar SMK KESUMA BANGSA 2 Depok
+  </p>
+
+ <p class="hero__intro">
+  Menjelajahi dunia desain visual dan teknologi melalui Adobe After Effects,
+  Adobe Illustrator, serta proyek berbasis Arduino dan ESP8266.
+</p>
+</div>
+<div class="ledger" role="list">
+  <div class="ledger__item" role="listitem">
+    <span class="ledger__number">11</span>
+    <span class="ledger__label">Kelas SMK</span>
+  </div>
+
+  <div class="ledger__item" role="listitem">
+    <span class="ledger__number">10+</span>
+    <span class="ledger__label">Software Dipelajari</span>
+  </div>
+
+  <div class="ledger__item" role="listitem">
+    <span class="ledger__number">7+</span>
+    <span class="ledger__label">Platform Mikrokontroler</span>
+  </div>
+
+  <div class="ledger__item" role="listitem">
+    <span class="ledger__number">∞</span>
+    <span class="ledger__label">Semangat Belajar</span>
+  </div>
+</div>
+</div>
+</section>
+
+<main>
+
+  <!-- ============ TENTANG ============ -->
+  <section class="section" id="tentang">
+    <div class="section__inner about">
+      <div class="about__frame">
+        <div class="about__portrait" aria-hidden="true">
+          <img src="galih ganteng.jpeg" alt="Foto Galih Putra Sandi" onerror="this.parentElement.innerHTML='<span>FOTO</span>'">
+        </div>
+      </div>
+      <div class="about__text">
+  <p class="section__eyebrow">01 — Tentang Saya</p>
+
+  <h2 class="section__title">
+    Mengembangkan kreativitas melalui desain visual dan teknologi.
+  </h2>
+
+  <p>
+    Saya adalah pelajar di <strong>SMK KESUMA BANGSA 2 Depok</strong> yang memiliki
+    ketertarikan pada dunia desain grafis, motion graphics, dan elektronika.
+    Saat ini saya aktif mempelajari <strong>Adobe After Effects</strong> dan
+    <strong>Adobe Illustrator</strong> untuk meningkatkan kemampuan desain,
+    sekaligus mengembangkan berbagai proyek menggunakan
+    <strong>Arduino</strong> dan <strong>ESP8266</strong>.
+  </p>
+
+  <p>
+    Saya senang belajar hal-hal baru, bereksperimen dengan teknologi, serta
+    menggabungkan kreativitas dan kemampuan teknis dalam setiap proyek yang
+    saya kerjakan. Bagi saya, setiap pengalaman adalah kesempatan untuk terus
+    berkembang dan menciptakan sesuatu yang bermanfaat.
+  </p>
+
+  <div class="about__tags">
+    <span>Adobe After Effects</span>
+    <span>Adobe Illustrator</span>
+    <span>Arduino & ESP8266</span>
+    <span>DIY Elektronik</span>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GAMING HUD STRIP ============ -->
+  <div class="hud-strip" aria-hidden="true">
+  <div class="hud-strip__inner">
+    <span class="hud-item"><span class="hud-item__icon">○</span> Adobe After Effects</span>
+    <span class="hud-divider">·</span>
+    <span class="hud-item"><span class="hud-item__icon gicon--cross">✕</span> Adobe Illustrator</span>
+    <span class="hud-divider">·</span>
+    <span class="hud-item"><span class="hud-item__icon gicon--square">□</span> Motion Graphics</span>
+    <span class="hud-divider">·</span>
+    <span class="hud-item"><span class="hud-item__icon gicon--tri">△</span> Graphic Design</span>
+    <span class="hud-divider">·</span>
+    <span class="hud-item"><span class="hud-item__icon">⬡</span> Arduino & ESP8266</span>
+    <span class="hud-divider">·</span>
+    <span class="hud-item"><span class="hud-item__icon">✦</span> Technology Enthusiast</span>
+
+    <!-- Duplicate for seamless scroll -->
+
+    <span class="hud-item"><span class="hud-item__icon">○</span> Adobe After Effects</span>
+    <span class="hud-divider">·</span>
+    <span class="hud-item"><span class="hud-item__icon gicon--cross">✕</span> Adobe Illustrator</span>
+    <span class="hud-divider">·</span>
+    <span class="hud-item"><span class="hud-item__icon gicon--square">□</span> Motion Graphics</span>
+    <span class="hud-divider">·</span>
+    <span class="hud-item"><span class="hud-item__icon gicon--tri">△</span> Graphic Design</span>
+    <span class="hud-divider">·</span>
+    <span class="hud-item"><span class="hud-item__icon">⬡</span> Arduino & ESP8266</span>
+    <span class="hud-divider">·</span>
+    <span class="hud-item"><span class="hud-item__icon">✦</span> Technology Enthusiast</span>
+  </div>
+</div>
+
+  <!-- ============ KEAHLIAN ============ -->
+ <section class="section section--panel" id="keahlian">
+  <div class="section__inner">
+    <p class="section__eyebrow">02 — Keahlian</p>
+    <h2 class="section__title">Keahlian & Minat</h2>
+
+    <div class="skills">
+      <div class="skills__group">
+        <h3>Bidang yang Dipelajari</h3>
+        <div class="chip-row">
+          <span>Motion Graphics</span>
+          <span>Desain Grafis</span>
+          <span>Arduino Programming</span>
+          <span>IoT Projects</span>
+          <span>UI Design</span>
+        </div>
+      </div>
+
+      <div class="skills__group">
+        <h3>Software & Teknologi</h3>
+        <ul class="skillbar-list">
+          <li><span>Adobe After Effects</span><div class="skillbar"><i style="--w:88%"></i></div></li>
+          <li><span>Adobe Illustrator</span><div class="skillbar"><i style="--w:85%"></i></div></li>
+          <li><span>Arduino IDE & ESP8266</span><div class="skillbar"><i style="--w:75%"></i></div></li>
+          <li><span>DIY Elektronik</span><div class="skillbar"><i style="--w:95%"></i></div></li>
+        </ul>
+      </div>
+
+      <div class="skills__group">
+        <h3>Tools</h3>
+        <div class="chip-row">
+          <span>Adobe After Effects</span>
+          <span>Adobe Illustrator</span>
+          <span>Arduino IDE</span>
+          <span>VS Code</span>
+          <span>GitHub</span>
+          <span>Canva</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+     <div class="cert-row">
+  <p class="cert-row__label">Sedang Dipelajari</p>
+  <div class="chip-row">
+    <span>Adobe After Effects</span>
+    <span>Adobe Illustrator</span>
+    <span>Graphic Design</span>
+    <span>Arduino & ESP8266</span>
+    <span>Web Development</span>
+  </div>
+</div>
+  </section>
+
+  <!-- ============ FEATURED PROJECTS / CAMPAIGNS ============ -->
+  <section id="proyek-featured">
+    <div class="section__inner">
+      <p class="section__eyebrow">03 — Featured Projects</p>
+      <h2 class="section__title">Campaign & Platform Highlights</h2>
+
+      <div class="projects-filter" role="group" aria-label="Filter proyek">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="dcb">Illustrator</button>
+        <button class="filter-btn" data-filter="supply">After Effect</button>
+        <button class="filter-btn" data-filter="campaign">Arduino</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- PROJECT 1: UPOINT.ID -->
+        <article class="project-card" data-category="dcb campaign"
+          data-title="Yves Saint Laurent Black Opium — Promotional Poster"
+          data-platform="Adobe Illustrator"
+            data-desc="Desain poster promosi bertema parfum Yves Saint Laurent Black Opium yang dibuat sebagai latihan desain grafis. Mengutamakan komposisi visual, pemilihan warna, tipografi, dan pencahayaan untuk menghasilkan tampilan bergaya luxury yang menarik perhatian."
+  data-metrics='[{"val":"1","label":"Poster Design"},{"val":"Luxury","label":"Visual Style"},{"val":"Branding","label":"Project"}]'
+  data-tags="Graphic Design,Adobe Illustrator,Poster Design,Luxury Branding,Product Advertisement"
+  data-highlights='["Merancang konsep visual bertema luxury branding","Menyusun tata letak dengan fokus utama pada produk","Menggunakan efek pencahayaan untuk memperkuat visual","Mengombinasikan warna merah, hitam, dan putih agar terlihat premium","Mendesain tipografi yang bersih dan mudah dibaca"]'
+  data-year="2026">
+          <div class="project-card__thumb">
+            <div class="project-card__thumb-bg" 
+              style="background-image: url('POSTER PARFUM YSL.jpg');
+                background-size: cover;
+                background-position: center;">
+</div>
+            <span class="project-card__badge badge--dcb">Illustrator</span>
+          </div>
+          <div class="project-card__body">
+            <p class="project-card__platform">Adobe Illustrator</p>
+            <h3 class="project-card__title">Yves Saint Laurent Black Opium — Promotional Poster</h3>
+            <p class="project-card__desc">Desain poster promosi bertema parfum Yves Saint Laurent Black Opium yang dibuat sebagai latihan desain grafis</p>
+            <div class="project-card__tags">
+            <span>Graphic Design</span>
+<span>Poster Design</span>
+<span>Adobe Illustrator</span>
+<span>Luxury Branding</span>
+            </div>
+            <div class="project-card__footer">
+              <span class="project-card__cta">View Details →</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 2: DUNIA GAMES -->
+        <article class="project-card" data-category="dcb campain"
+  data-title="Burger Bangor — Promotional Poster"
+  data-platform="Adobe Illustrator"
+  data-desc="Desain poster promosi Burger Bangor yang dibuat sebagai latihan desain grafis. Mengusung konsep visual yang modern dan segar dengan dominasi warna hijau untuk memperkuat identitas merek serta menonjolkan produk sebagai fokus utama."
+  data-metrics='[
+    {"val":"1","label":"Poster Design"},
+    {"val":"Food","label":"Branding"},
+    {"val":"Personal","label":"Project"}
+  ]'
+  data-tags="Graphic Design,Adobe Illustrator,Poster Design,Food Branding,Advertisement"
+  data-highlights='[
+    "Merancang konsep visual bertema food advertisement",
+    "Menjadikan produk sebagai fokus utama melalui komposisi yang seimbang",
+    "Menggunakan warna hijau untuk memperkuat identitas visual",
+    "Menyusun tipografi yang jelas dan mudah dibaca",
+    "Mendesain media promosi bergaya modern untuk kebutuhan branding"
+  ]'
+  data-year="2026">
+
+  <div class="project-card__thumb">
+    <div class="project-card__thumb-bg"
+      style="background-image: url('BURGER BANGOR.jpg');
+      background-size: cover;
+      background-position: center;">
+    </div>
+
+    <span class="project-card__badge badge--reseller">Illustrator</span>
+  </div>
+
+  <div class="project-card__body">
+    <p class="project-card__platform">Adobe Illustrator</p>
+
+    <h3 class="project-card__title">
+      Burger Bangor — Promotional Poster
+    </h3>
+
+    <p class="project-card__desc">
+      Desain poster promosi dengan konsep visual modern yang menonjolkan produk
+      melalui perpaduan warna, tipografi, dan tata letak yang menarik.
+    </p>
+
+    <div class="project-card__tags">
+      <span>Graphic Design</span>
+      <span>Food Branding</span>
+      <span>Poster Design</span>
+      <span>Adobe Illustrator</span>
+    </div>
+
+    <div class="project-card__footer">
+      <span class="project-card__cta">View Details →</span>
+    </div>
+  </div>
+</article>
+        <!-- PROJECT 3: myIM3 -->
+        <article class="project-card" data-category="dcb campain"
+           data-title="Nothing Phone 2a — Promotional Poster"
+  data-platform="Adobe Illustrator"
+  data-desc="Desain poster promosi Nothing Phone 2a yang dibuat sebagai latihan desain grafis. Mengusung konsep modern dan minimalis dengan fokus pada penyajian spesifikasi produk, tipografi bergaya futuristik, serta tata letak yang bersih untuk memperkuat identitas visual."
+  data-metrics='[
+    {"val":"1","label":"Poster Design"},
+    {"val":"Tech","label":"Product"},
+    {"val":"Personal","label":"Project"}
+  ]'
+  data-tags="Graphic Design,Adobe Illustrator,Poster Design,Technology Branding,Product Advertisement"
+  data-highlights='[
+    "Merancang konsep visual bertema teknologi modern",
+    "Menampilkan spesifikasi produk dengan tata letak yang informatif",
+    "Menggunakan tipografi bergaya futuristik sebagai identitas desain",
+    "Mengombinasikan warna gelap dan pencahayaan untuk memberikan kesan premium",
+    "Mendesain media promosi yang menarik dan mudah dipahami"
+  ]'
+  data-year="2026">
+
+  <div class="project-card__thumb">
+    <div class="project-card__thumb-bg"
+      style="background-image: url('NOTHING PHONE.jpg');
+      background-size: cover;
+      background-position: center;">
+    </div>
+             <span class="project-card__badge badge--dcb">Illustrator</span>
+  </div>
+
+  <div class="project-card__body">
+    <p class="project-card__platform">Adobe Illustrator</p>
+
+    <h3 class="project-card__title">
+      Nothing Phone 2a — Promotional Poster
+    </h3>
+
+    <p class="project-card__desc">
+      Desain poster promosi bergaya futuristik yang menonjolkan spesifikasi produk melalui komposisi visual, tipografi, dan tata letak yang modern.
+    </p>
+
+    <div class="project-card__tags">
+      <span>Graphic Design</span>
+      <span>Technology Branding</span>
+      <span>Poster Design</span>
+      <span>Adobe Illustrator</span>
+    </div>
+
+    <div class="project-card__footer">
+      <span class="project-card__cta">View Details →</span>
+    </div>
+  </div>
+</article>
+
+        <!-- PROJECT 4: XL Axis Game Token -->
+        <article class="project-card" data-category="supply"
+        <article class="project-card" data-category="motion"
+  data-title="Car Explosion VFX — Motion Graphics"
+  data-platform="Adobe After Effects"
+  data-desc="Proyek latihan visual effects (VFX) menggunakan Adobe After Effects dengan menggabungkan footage mobil dan efek ledakan. Berfokus pada proses compositing, masking, tracking, color correction, serta sinkronisasi efek visual agar terlihat lebih realistis."
+  data-metrics='[
+    {"val":"60 FPS","label":"Video Output"},
+    {"val":"VFX","label":"Motion Design"},
+    {"val":"Personal","label":"Project"}
+  ]'
+  data-tags="Adobe After Effects,VFX,Motion Graphics,Compositing,Video Editing"
+  data-highlights='[
+    "Menggabungkan footage mobil dengan efek ledakan menggunakan teknik compositing",
+    "Melakukan masking dan layer blending agar efek menyatu dengan objek",
+    "Menyesuaikan pencahayaan dan color correction untuk hasil yang lebih realistis",
+    "Mengatur timing visual effect agar sinkron dengan pergerakan video",
+    "Melakukan rendering video 60 FPS menggunakan Adobe After Effects"
+  ]'
+  data-year="2026">
+
+  <div class="project-card__thumb">
+    <div class="project-card__thumb-bg"
+      style="background-image: url('car ae.png');
+      background-size: cover;
+      background-position: center;">
+    </div>
+
+    <span class="project-card__badge badge--dcb">After Effects</span>
+  </div>
+
+  <div class="project-card__body">
+    <p class="project-card__platform">Adobe After Effects</p>
+
+    <h3 class="project-card__title">
+      Car Explosion VFX — Motion Graphics
+    </h3>
+
+    <p class="project-card__desc">
+      Latihan visual effects (VFX) dengan teknik compositing, masking, tracking, dan color correction untuk menghasilkan efek ledakan yang realistis.
+    </p>
+
+    <div class="project-card__tags">
+      <span>Motion Graphics</span>
+      <span>VFX</span>
+      <span>Compositing</span>
+      <span>Adobe After Effects</span>
+    </div>
+
+    <div class="project-card__footer">
+      <span class="project-card__cta">View Details →</span>
+    </div>
+  </div>
+</article>
+
+        <!-- PROJECT 5: Thematic Campaign -->
+        <article class="project-card" data-category="supply"
+          <article class="project-card" data-category="motion"
+  data-title="Cinematic Car Edit — Motion Graphics"
+  data-platform="Adobe After Effects"
+  data-desc="Proyek motion graphics bergaya sinematik menggunakan Adobe After Effects. Berfokus pada compositing, color grading, camera shake, visual effects (VFX), serta penambahan elemen seperti ledakan, asap, dan partikel untuk menciptakan tampilan video yang lebih dramatis."
+  data-metrics='[
+    {"val":"60 FPS","label":"Video Output"},
+    {"val":"VFX","label":"Motion Design"},
+    {"val":"Personal","label":"Project"}
+  ]'
+  data-tags="Adobe After Effects,Motion Graphics,VFX,Color Grading,Compositing,Video Editing"
+  data-highlights='[
+    "Melakukan color grading untuk menghasilkan nuansa sinematik",
+    "Menggabungkan efek ledakan, asap, dan partikel menggunakan teknik compositing",
+    "Menambahkan camera shake dan motion blur agar video lebih dinamis",
+    "Melakukan masking dan blending untuk menyatukan seluruh elemen visual",
+    "Merender video dengan kualitas tinggi menggunakan Adobe After Effects"
+  ]'
+  data-year="2026">
+
+  <div class="project-card__thumb">
+    <div class="project-card__thumb-bg"
+      style="background-image: url('car\ 2\ ae.jpg');
+      background-size: cover;
+      background-position: center;">
+    </div>
+
+    <span class="project-card__badge badge--campaign">After Effects</span>
+  </div>
+
+  <div class="project-card__body">
+    <p class="project-card__platform">Adobe After Effects</p>
+
+    <h3 class="project-card__title">
+      Cinematic Car Edit — Motion Graphics
+    </h3>
+
+    <p class="project-card__desc">
+      Video editing bergaya sinematik dengan perpaduan color grading, VFX, compositing, dan motion effects untuk menghasilkan visual yang lebih dramatis.
+    </p>
+
+    <div class="project-card__tags">
+      <span>Motion Graphics</span>
+      <span>VFX</span>
+      <span>Color Grading</span>
+      <span>Adobe After Effects</span>
+    </div>
+
+    <div class="project-card__footer">
+      <span>2026</span>
+      <span class="project-card__cta">View Details →</span>
+    </div>
+  </div>
+</article>
+
+      </div><!-- /projects-grid -->
+    </div>
+  </section>
+
+  <!-- PROJECT MODAL -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="Project detail">
+    <div class="modal" id="modal">
+      <div class="modal__header">
+        <div>
+          <p class="modal__platform" id="modalPlatform"></p>
+          <h2 class="modal__title" id="modalTitle"></h2>
+        </div>
+        <button class="modal__close" id="modalClose" aria-label="Tutup modal">✕</button>
+      </div>
+      <div class="modal__body">
+        <p class="modal__desc" id="modalDesc"></p>
+        <p class="modal__section-title">Key Metrics</p>
+        <div class="modal__metrics" id="modalMetrics"></div>
+        <p class="modal__section-title">Tech Stack & Focus</p>
+        <div class="modal__tags" id="modalTags"></div>
+        <p class="modal__section-title">Highlights</p>
+        <ul class="modal__highlights" id="modalHighlights"></ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PENGALAMAN KERJA ============ -->
+ <section class="section" id="proyek">
+  <div class="section__inner">
+    <p class="section__eyebrow">04 — Learning Journey</p>
+    <h2 class="section__title">Perjalanan Belajar</h2>
+
+    <div class="cases">
+
+      <article class="case">
+        <div class="case__head">
+          <h3>Adobe Illustrator</h3>
+          <span class="case__date">2025 — Sekarang</span>
+        </div>
+        <p>
+          Mempelajari dasar hingga teknik desain grafis menggunakan Adobe
+          Illustrator. Fokus pada pembuatan poster promosi, branding, tata
+          letak, tipografi, dan komposisi visual.
+        </p>
+        <div class="case__ledger">
+          <div><span class="n">Poster</span><span class="l">Design</span></div>
+          <div><span class="n">Branding</span><span class="l">Visual Style</span></div>
+          <div><span class="n">Typography</span><span class="l">Layout</span></div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case__head">
+          <h3>Adobe After Effects</h3>
+          <span class="case__date">2025 — Sekarang</span>
+        </div>
+        <p>
+          Belajar membuat motion graphics, animasi teks, transisi, serta efek
+          visual sederhana untuk meningkatkan kemampuan dalam dunia multimedia.
+        </p>
+        <div class="case__ledger">
+          <div><span class="n">Motion</span><span class="l">Graphics</span></div>
+          <div><span class="n">Animation</span><span class="l">Editing</span></div>
+          <div><span class="n">Visual FX</span><span class="l">Learning</span></div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case__head">
+          <h3>Arduino & ESP8266</h3>
+          <span class="case__date">2024 — Sekarang</span>
+        </div>
+        <p>
+          Mengembangkan berbagai proyek elektronika menggunakan Arduino dan
+          ESP8266, mulai dari kontrol relay, LCD, sensor, hingga web interface
+          untuk perangkat IoT sebagai media belajar dan eksperimen.
+        </p>
+        <div class="case__ledger">
+          <div><span class="n">Arduino</span><span class="l">Programming</span></div>
+          <div><span class="n">ESP8266</span><span class="l">IoT Project</span></div>
+          <div><span class="n">Electronics</span><span class="l">Experiment</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+  <!-- ============ PENDIDIKAN ============ -->
+ <section class="section section--panel" id="pengalaman">
+  <div class="section__inner">
+    <p class="section__eyebrow">05 — Education</p>
+    <h2 class="section__title">Latar Belakang Pendidikan</h2>
+
+    <div class="timeline">
+      <div class="timeline__item">
+        <span class="timeline__year">Sekarang</span>
+        <div class="timeline__body">
+          <h4>SMK KESUMA BANGSA 2 Depok</h4>
+          <p>
+            Fokus mempelajari desain grafis, motion graphics, serta teknologi
+            elektronika melalui berbagai proyek dan pembelajaran mandiri.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- ============ KONTAK ============ -->
+  <section class="section contact" id="kontak">
+    <div class="section__inner contact__inner">
+      <p class="section__eyebrow">06 — Contact</p>
+      <h2 class="section__title">Mari Ciptakan Sesuatu yang Kreatif Bersama.</h2>
+      <p class="contact__text">
+  Berlokasi di Depok, Indonesia. Saat ini fokus mengembangkan kemampuan di bidang Adobe Illustrator, Adobe After Effects, serta proyek berbasis Arduino dan ESP8266.
+</p>
+      <div class="contact__actions">
+        <a class="btn btn--primary" href="mailto:galihputra2970@gmail.com">Kirim Email</a>
+        <a class="btn btn--ghost" href="https://www.instagram.com/t._.xshylh/" target="_blank" rel="noopener">Instagram</a>
+        <a class="btn btn--ghost" href="https://github.com/lihhcode7" target="_blank" rel="noopener">Github</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+ <p>© 2026 Galih. Setiap karya adalah langkah menuju kemampuan yang lebih baik.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
